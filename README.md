@@ -24,7 +24,11 @@ docker build -t mycroft .
 ```
 
 ## Run
-To get persistent data and don't have, for example, to pair our instance every time the container is started. You can map a local directory into the container. Just replace the directory_on_local_machine with where you want the container mapped on your local machine (eg: /home/user/mycroft).
+When you want to run the program, you can run it via the [CLI](#cli), or via the [GUI](#gui).
+
+### CLI
+
+To get persistent data and don't have, for example, to pair our instance every time the container is started. You can map a local directory into the container. Just replace the directory_on_local_machine with where you want the container mapped on your local machine (eg: `/home/user/mycroft`).
 
 Sounds can be played in the container using pulseaudio, without modifying any config files (Thanks to [fsmunoz](https://github.com/jessfraz/dockerfiles/issues/85#issuecomment-299431931)).
 
@@ -52,14 +56,20 @@ CONTAINER ID        IMAGE                                                COMMAND
 692219e23bf2        mycroft                                    "/mycroft/ai/mycro..."         3 seconds ago         Up 1 second           0.0.0.0:8181->8181/tcp                          mycroft
 ```
 
-You should now have a running instance of mycroft that you can interact with via the cli, etc.
+You should now have a running instance of MyCroft that you can interact with via the CLI.
 
-* For GUI Development:
-1- Expose The following ports: 
-```18180-18189:18180-18189``
-2-Follow either A or B steps.
-A: Follow the [PR] (https://github.com/MycroftAI/mycroft-core/pull/2106)
-B: Mount the skills and mycroft folder from the mycroft-core in the container then Link the folders to your host /opt/mycroft
+### GUI
+To do it via the GUI, you will have to follow the steps below:
+
+  * Expose The following ports: `18180-18189:18180-18189`
+  * Then, either follow Step A or Step B.
+
+    - Step A
+      - Follow the [Pull Request](https://github.com/MycroftAI/mycroft-core/pull/2106).
+    - Step B 
+      - Mount the skills and mycroft folder from the mycroft-core in the container
+             
+      - Link the folders to your host `/opt/mycroft`.
 
 ## Logs
 At any time you can watch the logs simply by running the bellow command:
