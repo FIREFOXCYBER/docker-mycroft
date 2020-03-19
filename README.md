@@ -54,6 +54,13 @@ CONTAINER ID        IMAGE                                                COMMAND
 
 You should now have a running instance of mycroft that you can interact with via the cli, etc.
 
+* For GUI Development:
+1- Expose The following ports: 
+```18180-18189:18180-18189``
+2-Follow either A or B steps.
+A: Follow the [PR] (https://github.com/MycroftAI/mycroft-core/pull/2106)
+B: Mount the skills and mycroft folder from the mycroft-core in the container then Link the folders to your host /opt/mycroft
+
 ## Logs
 At any time you can watch the logs simply by running the bellow command:
 
